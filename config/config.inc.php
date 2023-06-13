@@ -75,6 +75,12 @@ $config['picture']['frame_left_percentage'] = 10;
 $config['picture']['frame_right_percentage'] = 10;
 $config['picture']['frame_top_percentage'] = 5;
 $config['picture']['frame_bottom_percentage'] = 15;
+$config['picture']['qrcode'] = true;
+$config['picture']['qrSize'] = '4';
+$config['picture']['qrPosition'] = 'bottomRight';
+$config['picture']['qrOffset'] = 10;
+$config['picture']['qrMargin'] = '4';
+$config['picture']['qrBgColor'] = '#ffffff';
 // specify key id (e.g. 13 is the enter key) to use that key to take a picture (picture key)
 // use for example https://keycode.info to get the key code
 $config['picture']['key'] = '';

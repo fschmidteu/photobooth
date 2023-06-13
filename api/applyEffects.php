@@ -118,6 +118,30 @@ try {
                     }
                 }
 
+                if ($config['picture']['qrcode'] && $imageHandler->qrAvailable) {
+                    // create qr code
+                    $imageHandler->qrUrl = $config['qr']['url'];
+                    if ($config['qr']['append_filename']) {
+                        $imageHandler->qrUrl = $config['qr']['url'] . $filename;
+                    }
+                    $imageHandler->qrEcLevel = $config['qr']['ecLevel'];
+                    $imageHandler->qrSize = $config['picture']['qrSize'];
+                    $imageHandler->qrMargin = $config['picture']['qrMargin'];
+                    $imageHandler->qrColor = $config['picture']['qrBgColor'];
+                    $imageHandler->qrOffset = $config['picture']['qrOffset'];
+                    $imageHandler->qrPosition = $config['picture']['qrPosition'];
+        
+                    $qrCode = $imageHandler->createQr();
+                    if (!$qrCode) {
+                        throw new Exception('Can\'t create QR Code resource.');
+                    }
+                    $imageResource = $imageHandler->applyQr($qrCode, $source);
+                    if (!$imageResource) {
+                        throw new Exception('Can\'t apply QR Code to image resource.');
+                    }
+                    imagedestroy($qrCode);
+                }
+        
                 // apply filter
                 if ($image_filter) {
                     try {
