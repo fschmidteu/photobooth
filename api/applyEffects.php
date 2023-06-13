@@ -135,11 +135,11 @@ try {
                     if (!$qrCode) {
                         throw new Exception('Can\'t create QR Code resource.');
                     }
-                    $imageResource = $imageHandler->applyQr($qrCode, $source);
+                    $imageResource = $imageHandler->applyQr($qrCode, $imageResource);
                     if (!$imageResource) {
                         throw new Exception('Can\'t apply QR Code to image resource.');
                     }
-                    imagedestroy($qrCode);
+                    //imagedestroy($qrCode);
                 }
         
                 // apply filter
