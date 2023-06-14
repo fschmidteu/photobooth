@@ -122,7 +122,7 @@ try {
                     // create qr code
                     $imageHandler->qrUrl = $config['qr']['url'];
                     if ($config['qr']['append_filename']) {
-                        $imageHandler->qrUrl = $config['qr']['url'] . $filename_photo;
+                        $imageHandler->qrUrl = $config['qr']['url'] . $image;
                     }
                     $imageHandler->qrEcLevel = $config['qr']['ecLevel'];
                     $imageHandler->qrSize = $config['picture']['qrSize'];
