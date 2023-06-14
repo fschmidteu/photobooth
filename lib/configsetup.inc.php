@@ -615,7 +615,7 @@ $configsetup = [
             'view' => 'expert',
             'type' => 'checkbox',
             'name' => 'picture[qrcode]',
-            'value' => $config['pripicturent']['qrcode'],
+            'value' => $config['picture']['qrcode'],
         ],
         'picture_qrSize' => [
             'view' => 'advanced',
