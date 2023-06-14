@@ -139,7 +139,7 @@ try {
                     if (!$imageResource) {
                         throw new Exception('Can\'t apply QR Code to image resource.');
                     }
-                    //imagedestroy($qrCode);
+                    imagedestroy($qrCode);
                 }
         
                 // apply filter
